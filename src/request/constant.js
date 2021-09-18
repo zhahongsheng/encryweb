@@ -10,7 +10,7 @@ switch (process.env.NODE_ENV) {
         break;
     default://开发环境
         // baseUrl = 'http://192.168.48.40:8080/C1-DQM/';
-        baseUrl = 'http://localhost:8080/encry/';
+        baseUrl = 'http://localhost:8091/encry/';
         break;
 }
 export default baseUrl;

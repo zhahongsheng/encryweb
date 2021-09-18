@@ -5,6 +5,7 @@ import {
 } from '@ant-design/icons';
 import DmEncry from './components/DmEncry'
 import Navigation from './components/Navigation'
+import UUID from './components/UUID.js'
 import './App.css';
 
 const { Sider } = Layout;
@@ -20,16 +21,17 @@ class App extends Component {
   };
 
   handClick = (obj) => {
-    const {key} = obj;
-    console.log(key,'---key---')
+    const { key } = obj;
+    console.log(key, '---key---')
     this.setState({ key })
-    console.log(this.state.key,'--this.key--')
+    console.log(this.state.key, '--this.key--')
   };
 
   handPages = () => {
-    switch(this.state.key){
-      case "1" : return ( <DmEncry/>);
-      case "2" : return ( <Navigation/>);
+    switch (this.state.key) {
+      case "2": return (<DmEncry />);
+      case "1": return (<Navigation />);
+      case "3": return (<UUID />);
     }
   }
 
@@ -39,11 +41,10 @@ class App extends Component {
       <div className="App">
         <Layout style={{ minHeight: '100vh' }}>
           <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-            <Menu theme="dark" defaultSelectedKeys={['2']} mode='inline' onClick={this.handClick}>
-            <Menu.Item key='2'>路由
-              </Menu.Item>
-              <Menu.Item key='1'>DM数据库加密
-              </Menu.Item>
+            <Menu theme="dark" defaultSelectedKeys={['1']} mode='inline' onClick={this.handClick}>
+              <Menu.Item key='1'>路由</Menu.Item>
+              <Menu.Item key='2'>DM数据库加密</Menu.Item>
+              <Menu.Item key='3'>生成UUID</Menu.Item>
             </Menu>
           </Sider>
           <Layout style={{ background: '#fff' }}>
